@@ -4,6 +4,9 @@
 //              distance
 //              user location
 //              space station location
+//
+// Probably shouldn't use Static Generation with this, as client requests the data every time it loads
+// Change to Client-side rendering
 
 function SpaceStation({ sslocation }) {
   let date = new Date(sslocation.timestamp * 1000)
@@ -14,7 +17,7 @@ function SpaceStation({ sslocation }) {
 
   return (
     <div>
-      <h1>{sslocation.name}</h1>
+      <h1>{sslocation.name.toUpperCase()}</h1>
       <ul>
         <li>Latitude: {sslocation.latitude}</li>
         <li>Longitude: {sslocation.longitude}</li>
